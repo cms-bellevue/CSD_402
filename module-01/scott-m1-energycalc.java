@@ -105,7 +105,7 @@ public class EnergyCalculator {
                     return; // Exit the program after successful CLI calculation
                 } catch (NumberFormatException e) {
                     System.out.println("Error: All command-line arguments for calculation must be valid numeric values.");
-                    System.out.println("Usage: java EnergyCalculator <waterMass> <initialTemperature> <finalTemperature>");
+                    System.out.println("Usage: java scott-m1-energycalc.java <waterMass> <initialTemperature> <finalTemperature>");
                     System.out.println("Use --help or -h for more details.");
                     return; // Exit on invalid number format in CLI args
                 }
@@ -185,13 +185,13 @@ public class EnergyCalculator {
             water from an initial to a final temperature.
 
             To run the program in interactive mode:
-            java EnergyCalculator
+            java scott-m1-energycalc.java
 
             To run the program from the command line with input values:
-            java EnergyCalculator <waterMass> <initialTemperature> <finalTemperature>
+            java scott-m1-energycalc.java <waterMass> <initialTemperature> <finalTemperature>
 
             Example:
-            java EnergyCalculator 5 20 100
+            java scott-m1-energycalc.java 5 20 100
             This will calculate the energy required to heat 5 kg of water
             from 20°C to 100°C and then exit.
 
@@ -201,8 +201,8 @@ public class EnergyCalculator {
             - <finalTemperature>: The final temperature in Celsius (must be greater than initial).
 
             To display this help message:
-            java EnergyCalculator --help
-            java EnergyCalculator -h
+            java scott-m1-energycalc.java --help
+            java scott-m1-energycalc.java -h
 
             To exit the program at any time during interactive mode, type 'quit' or 'q'.
             ---------------------------------------------------------
