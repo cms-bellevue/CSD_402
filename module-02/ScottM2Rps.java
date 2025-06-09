@@ -4,17 +4,16 @@ Clint Scott
 CSD 402
 M2 Rock-Paper-Scissors
 
-This program simulates a classic game of Rock-Paper-Scissors.
-The computer randomly selects Rock, Paper, or Scissors, and then
-prompts the user to make their selection. The game continues to play
-round after round until the user explicitly types 'quit' or 'q'.
+This is a simple Rock-Paper-Scissors game where the computer randomly
+picks a move, and the user plays against it. The game keeps going until
+the user types 'quit' or 'q'.
 
 For each round, the program displays the choices of both the computer
 and the user, along with the game's outcome.
 
 The program also keeps a running tally of user wins, losses, and ties.
-When the user chooses to exit, it displays the final game statistics
-in a clear, readable format, indicating who won more rounds overall.
+
+When the user chooses to exit, it displays the final game statistics.
 
 The game rules are:
 - Rock (1) beats Scissors (3)
@@ -34,7 +33,7 @@ public class ScottM2Rps {
     private static final int PAPER = 2;
     private static final int SCISSORS = 3;
 
-    // SecureRandom for generating unpredictable computer choices
+    // Using SecureRandom so the computer picks aren't predictable
     private static final SecureRandom random = new SecureRandom();
 
     // Game statistics tallies
@@ -101,7 +100,6 @@ public class ScottM2Rps {
             displayFinalStatistics();
 
         } catch (NoSuchElementException e) {
-            // Catching NoSuchElementException specifically at the main level for direct Scanner issues
             exit(); // Handle program interruption gracefully (e.g., Ctrl+C)
         } catch (Exception e) {
             // Catch any other unexpected exceptions that might occur during program execution.
@@ -206,7 +204,7 @@ public class ScottM2Rps {
     }
 
     /**
-     * Displays both the computer's and the user's selections.
+     * Shows what both you and the computer picked
      *
      * @param computerChoice The computer's choice (1, 2, or 3).
      * @param userChoice     The user's choice (1, 2, or 3).
@@ -217,8 +215,7 @@ public class ScottM2Rps {
     }
 
     /**
-     * Determines the winner of the Rock-Paper-Scissors game, prints the result,
-     * and updates the win/loss/tie tallies.
+     * Figures out who won and updates the score.
      *
      * @param computerChoice The computer's choice (1, 2, or 3).
      * @param userChoice     The user's choice (1, 2, or 3).
@@ -239,7 +236,6 @@ public class ScottM2Rps {
     }
 
     /**
-     * Calculates the Greatest Common Divisor (GCD) of two numbers using the Euclidean algorithm.
      * Used for simplifying ratios.
      *
      * @param a The first number.
@@ -254,8 +250,7 @@ public class ScottM2Rps {
     }
 
     /**
-     * Displays the final game statistics, including total wins, losses, and ties,
-     * and a final win/loss ratio for the user, clearly stating who won more overall.
+     * At the end, shows how many games you won, lost, or tied, and gives a win/loss ratio.
      */
     private static void displayFinalStatistics() {
         int totalGames = userWins + computerWins + ties;
