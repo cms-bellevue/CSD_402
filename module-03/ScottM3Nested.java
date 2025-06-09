@@ -4,15 +4,15 @@ Clint Scott
 CSD 402
 M3 Nested For Loops
 
-This program generates and displays a unique numerical pattern using nested for loops.
-The pattern consists of rows of powers of two, increasing to a central value
-and then decreasing symmetrically. An '@' symbol is appended to the end of each row.
+This program uses nested for loops to display a centered pyramid-like pattern
+built from powers of two. Each row builds up to a peak value, then mirrors back
+down, followed by a right-aligned '@' symbol.
 
-The output is precisely formatted for visual alignment:
-- Peak numbers are vertically centered.
-- All '@' symbols are perfectly right-aligned.
+Output is carefully formatted so:
+- The peak numbers in each row are vertically centered.
+- The '@' symbols all line up on the far right.
 
-This program also supports a command-line --help or -h option to display usage instructions.
+You can pass --help or -h on the command line to show usage instructions.
 */
 
 public class ScottM3Nested {
