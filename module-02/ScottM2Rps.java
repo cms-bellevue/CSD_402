@@ -27,7 +27,7 @@ import java.security.SecureRandom;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class ScottM3Nested {
+public class ScottM2Rps {
 
     // Constants for game choices
     private static final int ROCK = 1;
@@ -137,11 +137,11 @@ public class ScottM3Nested {
             against the computer.
 
             To run the program in interactive mode:
-            java ScottM3Nested.java
+            java ScottM2Rps.java
 
             To display this help message:
-            java ScottM3Nested.java --help
-            java ScottM3Nested.java -h
+            java ScottM2Rps.java --help
+            java ScottM2Rps.java -h
 
             There are no command-line arguments for playing a game directly.
 
