@@ -34,7 +34,7 @@ public class ScottM3Nested {
         int maxNumber = (int) Math.pow(2, rows - 1);
         int maxWidth = String.valueOf(maxNumber).length();
 
-        // Calculate the total width of the longest numerical line to ensure proper centering and '@' alignment.
+        // Calculate the total width of the longest line of numbers (excluding @)..
         int totalNums = rows * 2 - 1;
         int lineWidth = totalNums * (maxWidth + 1) - 1;
 
