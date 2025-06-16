@@ -116,7 +116,7 @@ public class ScottM4Methods {
         // Display short array and its average
         System.out.println("Short Array: " + Arrays.toString(shortArray));
         System.out.println("Average (short): " + average(shortArray));
-        System.out.println(); // Blank line for spacing
+        System.out.println();
 
         // Display int array and its average
         System.out.println("Int Array: " + Arrays.toString(intArray));
