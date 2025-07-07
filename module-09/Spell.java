@@ -1,8 +1,8 @@
 /*
-Clint Scott
-07/06/2025
-CSD 402
-Spell Class – Represents a D&D Spell with a name and description
+Clint Scott  
+07/06/2025  
+CSD 402  
+Spell Class – Represents a D&D Spell with a name and description  
 */
 
 public class Spell {

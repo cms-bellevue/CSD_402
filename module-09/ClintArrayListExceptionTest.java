@@ -2,7 +2,7 @@
 Clint Scott
 07/06/2025
 CSD 402
-M9 Program 1 – ArrayList Exception Handling with User Input
+M9 Program 1 - ArrayList Exception Handling with User Input
 
 This file defines the ClintArrayListExceptionTest class which:
 - Stores at least 10 String elements in an ArrayList
@@ -29,7 +29,7 @@ public class ClintArrayListExceptionTest {
         System.out.println("ClintArrayListExceptionTest Help");
         System.out.println("---------------------------------");
         System.out.println("This program shows a list of 10 D&D spell names.");
-        System.out.println("It then asks the user for an index (0–9) to display that specific spell again.");
+        System.out.println("It then asks the user for an index (0-9) to display that specific spell again.");
         System.out.println("If an invalid index is entered, the program will display an exception message.");
         System.out.println("Usage:");
         System.out.println("  java ClintArrayListExceptionTest         Run the program");
@@ -38,6 +38,9 @@ public class ClintArrayListExceptionTest {
         System.out.println();
     }
 
+    /**
+     * Main method - Displays spell list, handles user input, and shows selected spell details.
+     */
     public static void main(String[] args) {
         // Check for help argument
         if (args.length > 0 && (args[0].equals("-h") || args[0].equals("--help"))) {
@@ -55,7 +58,7 @@ public class ClintArrayListExceptionTest {
         spellbook.add(new Spell("Mage Armor", "Protects a creature with magical force, increasing AC to 13 + Dexterity modifier."));
         spellbook.add(new Spell("Lightning Bolt", "A bolt of lightning that deals 8d6 lightning damage in a line."));
         spellbook.add(new Spell("Teleport", "Instantly transports the caster and willing creatures to a location."));
-        spellbook.add(new Spell("Counterspell", "Interrupts and negates another creature’s spell."));
+        spellbook.add(new Spell("Counterspell", "Interrupts and negates another creature's spell."));
         spellbook.add(new Spell("Sleep", "Puts creatures within a 20-foot radius to sleep."));
         spellbook.add(new Spell("Fly", "Grants the ability to fly for 10 minutes."));
 
@@ -68,13 +71,15 @@ public class ClintArrayListExceptionTest {
 
         // Main loop for user interaction
         while (true) {
-            // Display all elements using a for-each loop
+            // Display all elements using a for-each loop with manual index
             System.out.println("Spellbook contents:");
-            for (int i = 0; i < spellbook.size(); i++) {
-                System.out.println(i + ": " + spellbook.get(i).getName());
+            int i = 0;
+            for (Spell s : spellbook) {
+                System.out.println(i + ": " + s.getName());
+                i++;
             }
 
-            System.out.print("\nEnter the index of the spell you want to see again (0 to 9, -1 to exit): ");
+            System.out.print("\nEnter the index of the spell you want to see again (0 to 9, q to quit): ");
             String input = null;
             try {
                 input = scanner.nextLine();
@@ -83,15 +88,16 @@ public class ClintArrayListExceptionTest {
                 break;
             }
 
-            // Check for exit condition
-            if (input.equals("-1")) {
+            if (input.equals("q")) {
                 System.out.println("Exiting the program...");
                 break;
             }
 
             try {
-                int index = Integer.parseInt(input);
+                // Autoboxing to Integer
+                Integer index = Integer.valueOf(input);
 
+                // Auto-unboxing when used as index
                 if (index < 0 || index >= spellbook.size()) {
                     System.out.println("Exception: Out of Bounds");
                     continue;
@@ -100,17 +106,15 @@ public class ClintArrayListExceptionTest {
                 Spell selectedSpell = spellbook.get(index);
                 System.out.println(selectedSpell);
 
-                // Prompt to select another spell or show indexes again
                 System.out.print("\nDo you want to select another spell? (y/n): ");
                 String anotherSpell = scanner.nextLine().toLowerCase();
 
-                // Ensure the response is either 'y' or 'n'
                 if (anotherSpell.equals("n")) {
                     System.out.println("Exiting the program...\n");
                     break;
                 } else if (anotherSpell.equals("y")) {
-                    System.out.println();  // Blank line after the prompt
-                    continue;  // Proceed to the next iteration
+                    System.out.println();
+                    continue;
                 } else {
                     System.out.println("Invalid response. Exiting the program...\n");
                     break;
