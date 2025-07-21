@@ -16,8 +16,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox; // Import VBox to hold multiple Text nodes
-import javafx.scene.text.Text;   // Import Text for rich text formatting
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -60,17 +60,14 @@ public class HBoxHeavyMetalDrummers extends Application {
             button.setGraphic(content);
 
             // Style buttons with dark background, gold border, bold white text
-            // Note: Text styling is now applied directly to Text nodes, not the button's -fx-text-fill
             button.setStyle("-fx-background-color: #B22222; " +
                             "-fx-border-color: #DAA520; -fx-border-width: 2px; " +
                             "-fx-border-radius: 5px; -fx-pref-width: 150px;");
 
-            // Demonstrate fillHeight: odd-indexed buttons have fixed height
-            // Adjusted height to accommodate two lines of text
             if (i % 2 != 0) {
-                button.setPrefHeight(60); // Increased height to accommodate two lines
+                button.setPrefHeight(60);
             } else {
-                button.setPrefHeight(60); // Consistent height for all buttons
+                button.setPrefHeight(60);
             }
 
             drummerButtons[i] = button;

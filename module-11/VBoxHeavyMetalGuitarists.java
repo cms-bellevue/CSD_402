@@ -16,7 +16,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text; // Import Text for rich text formatting
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -59,20 +59,13 @@ public class VBoxHeavyMetalGuitarists extends Application {
             button.setGraphic(content);
 
             // Style each button with dark background, gold border, and bold white text
-            // Note: Text styling is now applied directly to Text nodes, not the button's -fx-text-fill
             button.setStyle("-fx-background-color: #B22222; " +
                             "-fx-border-color: #DAA520; -fx-border-width: 2px; " +
                             "-fx-border-radius: 5px;");
 
-            // Demonstrate fillWidth and size variation: make even-indexed buttons narrower
-            // Adjusted preferred height to accommodate two lines of text
-            if (i % 2 == 0) {
-                button.setPrefWidth(150);
-                button.setPrefHeight(60); // Increased height for multiline text
-            } else {
-                button.setPrefWidth(200);
-                button.setPrefHeight(60); // Increased height for multiline text
-            }
+            // Set a consistent preferred width and height for all buttons
+            button.setPrefWidth(200);
+            button.setPrefHeight(60);
 
             guitaristButtons[i] = button;
         }
